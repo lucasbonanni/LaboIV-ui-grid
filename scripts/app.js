@@ -38,4 +38,9 @@ angular
       templateUrl: 'views/modificar.html',
       controller:'ModificarCtrl'
     })
+    .state('configurado', {
+      url: '/configurado',
+      templateUrl: 'views/simpleTP.html',
+      controller:'configuradoTP'
+    })
   });

@@ -9,4 +9,16 @@ angular.module('app')
     		return '';
       return sexo[input];
     };
-  });
+  })
+  .filter('sexo', function () {
+    var sexo = {
+      "Male": 'Masculino',
+      "Female": 'Femenino'
+    }
+    return function (input) {
+      if (!input)
+        return '';
+      return sexo[input];
+    };
+  })
+  ;
