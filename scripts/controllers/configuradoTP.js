@@ -19,6 +19,10 @@ angular
       console.info(rta);
     });
 
+    $scope.mostrarPos = function (latitud, longitud){
+      alert("latitud: " + latitud + " longitud " + longitud);
+    }
+
     console.log(uiGridConstants);
 
     function columnDefs () {
@@ -52,7 +56,8 @@ angular
         { field: 'fechaNacimiento', name: 'fechaNacimiento'
           ,type: 'date'
           ,cellFilter: "date: 'dd-MM-yyyy'"
-        }
+        },
+        { field: 'latitud', cellTemplate:"<button type=\"button\" ng-click=\"grid.appScope.mostrarPos( grid.getCellValue(row, col ),row.entity.logitud)\">posision</button>"},
       ];
     }
   })
