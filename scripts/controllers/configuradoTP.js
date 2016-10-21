@@ -1,6 +1,10 @@
 angular
   .module('app')
-  .controller('configuradoTP', function($scope, data, i18nService, uiGridConstants) {
+  .controller('configuradoTP', function($scope, data, i18nService, uiGridConstants,NgMap) {
+
+    //$scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYhrLDYgU8ClRKO58_sPLO9e-Je1fYSbs";
+    $scope.mapaLatitud = 0;
+    $scope.mapaLongitud = 0;
     $scope.titulo = "Configuracion Campos";
     // Objeto de configuracion de la grilla.
     $scope.gridOptions = {};
@@ -19,9 +23,14 @@ angular
       console.info(rta);
     });
 
+
+    
+
     $scope.mostrarPos = function (latitud, longitud){
-      alert("latitud: " + latitud + " longitud " + longitud);
-    }
+      //alert("latitud: " + latitud + " longitud " + longitud);
+      $scope.mapaLatitud = Number(latitud);
+      $scope.mapaLongitud = Number(longitud);
+    };
 
     console.log(uiGridConstants);
 
@@ -57,7 +66,7 @@ angular
           ,type: 'date'
           ,cellFilter: "date: 'dd-MM-yyyy'"
         },
-        { field: 'latitud', cellTemplate:"<button type=\"button\" ng-click=\"grid.appScope.mostrarPos( grid.getCellValue(row, col ),row.entity.logitud)\">posision</button>"},
+        { field: 'latitud', cellTemplate:"<button type=\"button\" ng-click=\"grid.appScope.mostrarPos(row.entity.latitud,row.entity.logitud)\">posision</button>"},
       ];
     }
   })

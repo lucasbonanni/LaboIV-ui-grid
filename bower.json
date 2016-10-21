@@ -1,0 +1,26 @@
+{
+  "name": "uigrid",
+  "description": "tp uigrid",
+  "main": "package",
+  "authors": [
+    "Lucas Bonanni"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-grid": "ui-grid#^3.1.1",
+    "angular-ui-router": "*",
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "pdfmake": "^0.1.20",
+    "ngmap": "^1.17.8"
+  }
+}
