@@ -8,6 +8,10 @@ angular
     $scope.titulo = "Configuracion Campos";
     // Objeto de configuracion de la grilla.
     $scope.gridOptions = {};
+
+    $scope.gridAmigos = {};
+    $scope.gridAmigos.columnDefs = columnDefs();
+
     $scope.gridOptions.paginationPageSizes = [25, 50, 75];
     // Configuracion de la paginacion
     $scope.gridOptions.paginationPageSize = 25;
@@ -26,23 +30,24 @@ angular
 
     
 
-    $scope.mostrarPos = function (latitud, longitud){
+    $scope.mostrarPos = function (latitud, longitud, amigos){
       //alert("latitud: " + latitud + " longitud " + longitud);
       $scope.mapaLatitud = Number(latitud);
       $scope.mapaLongitud = Number(longitud);
+      $scope.gridAmigos.data = amigos;
     };
 
-    console.log(uiGridConstants);
+    //console.log(uiGridConstants);
 
     function columnDefs () {
       return [
         { field: 'id', name: '#', width: 45},
         { field: 'avatar', cellTemplate:"<img width=\"50px\" ng-src=\"{{grid.getCellValue(row, col)}}\" lazy-src>"},
         { field: 'titulo', name: 'ocupacion'
-          ,filter:{
+          /*,filter:{
             condition: uiGridConstants.filter.STARTS_WITH,
             placeholder: 'comienza con...'
-          }
+          }*/
         },
         { field: 'nombre', name: 'nombre'
           ,enableFiltering: false
@@ -51,7 +56,7 @@ angular
         { field: 'email', name: 'mail'},
         { field: 'sexo', name: 'sexo'
         // filtro de busqueda.
-          ,filter: {
+          /*,filter: {
             // term: '1',
             type: uiGridConstants.filter.SELECT,
             selectOptions: [
@@ -60,13 +65,13 @@ angular
             ]
           }
           //filtro de los datos
-          ,cellFilter: 'sexo'
+          ,cellFilter: 'sexo'*/
         },
         { field: 'fechaNacimiento', name: 'fechaNacimiento'
           ,type: 'date'
           ,cellFilter: "date: 'dd-MM-yyyy'"
         },
-        { field: 'latitud', cellTemplate:"<button type=\"button\" ng-click=\"grid.appScope.mostrarPos(row.entity.latitud,row.entity.logitud)\">posision</button>"},
+        { field: 'latitud', cellTemplate:"<button type=\"button\" ng-click=\"grid.appScope.mostrarPos(row.entity.latitud,row.entity.logitud,row.entity.amigos)\">posision</button>"},
       ];
     }
   })
