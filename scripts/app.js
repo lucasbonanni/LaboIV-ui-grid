@@ -44,4 +44,9 @@ angular
       templateUrl: 'views/simpleTP.html',
       controller:'configuradoTP'
     })
+    .state('servicios', {
+      url: '/servicios',
+      templateUrl: 'views/simpleServicios.html',
+      controller:'configuradoServicios'
+    })
   });
