@@ -1,0 +1,33 @@
+<!--div class="container">
+
+  
+  <div class="row">
+  	<div class="col-md-6">
+  		<div ui-grid="gridOptions" class="myGrid"></div>
+  	</div>
+
+  </div>
+  <div class="row">
+  	<div class="col-md-6">
+  		<div ui-grid="gridAmigos" class="myGrid"></div>
+  	</div>
+  	<div class="col-md-1"></div>
+  	<div class="col-md-4">
+		<ng-map center="{{mapaLatitud}}, {{mapaLongitud}}" zoom="3"></ng-map>
+	</div>
+	  	<!--div class="col-md-6">
+
+		  	<div class="row">
+		  		  	
+		  	</div>
+  	</div->
+  </div>
+</div-->
+
+<div>
+  <h3>{{titulo}}</h3>
+  <div ui-grid="gridOptions" class="myGrid"
+    ui-grid-pagination
+    ui-grid-resize-columns
+  ></div>
+</div>

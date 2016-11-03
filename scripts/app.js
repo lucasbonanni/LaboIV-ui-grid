@@ -49,4 +49,10 @@ angular
       templateUrl: 'views/simpleServicios.html',
       controller:'configuradoServicios'
     })
+    .state('factories', {
+      url: '/factories',
+      templateUrl: 'views/simpleFactories.html',
+      controller:'configuradoFactories'
+    })
+
   });
