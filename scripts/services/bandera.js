@@ -1,6 +1,7 @@
 angular
   .module('app')
-  .service('bandera', function ($http) {
+  .constant('bandera_url','http://www.egos27.somee.com/api/bandera')
+  .service('bandera', function ($http,bandera_url) {
     this.Nombre = "servicio bandera";
 
     //http://www.egos27.somee.com/api/bandera
@@ -11,10 +12,10 @@ angular
     function traerUrl(parametro){
       if(!parametro)
       {
-        return url;
+        return bandera_url;
       }
       else{
-        return url + '/' + parametro;
+        return bandera_url + '/' + parametro;
       }
 
     };  

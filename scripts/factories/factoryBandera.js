@@ -1,6 +1,8 @@
 angular
   .module('app')
-  .factory('factoryBandera', function ($http) {
+  .value('version','0.1')
+  .constant('bandera_url','http://www.egos27.somee.com/api/bandera')
+  .factory('factoryBandera', function ($http,bandera_url) {
     this.Nombre = "servicio bandera";
 
     var objeto = {};
@@ -13,10 +15,10 @@ angular
     function traerUrl(parametro){
       if(!parametro)
       {
-        return url;
+        return bandera_url;
       }
       else{
-        return url + '/' + parametro;
+        return bandera_url3883 + '/' + parametro;
       }
 
     };  
