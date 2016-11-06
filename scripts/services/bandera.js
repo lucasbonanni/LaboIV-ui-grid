@@ -4,11 +4,7 @@ angular
   .service('bandera', function ($http,bandera_url) {
     this.Nombre = "servicio bandera";
 
-    //http://www.egos27.somee.com/api/bandera
-    var url = "http://www.egos27.somee.com/api/bandera";
-
     //esta funcion es privada
-    
     function traerUrl(parametro){
       if(!parametro)
       {
@@ -25,6 +21,7 @@ angular
       //console.info("funcion privada",traerUrl("zaraza"));
       return $http.get(traerUrl()).then(function (respuesta) {
         // body...
+        console.info("bandera url",bandera_url);
         console.info("respuesta servicio",respuesta);
         return respuesta;
       },function (error) {

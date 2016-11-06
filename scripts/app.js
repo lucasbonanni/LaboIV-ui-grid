@@ -55,4 +55,10 @@ angular
       controller:'configuradoFactories'
     })
 
+    .state('completo', {
+      url: '/completo',
+      templateUrl: 'views/bandera.html',
+      controller:'ServicesFactoriesCtlr'
+    })
+
   });
