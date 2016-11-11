@@ -60,5 +60,10 @@ angular
       templateUrl: 'views/bandera.html',
       controller:'ServicesFactoriesCtlr'
     })
+    .state('directiva', {
+      url: '/directiva',
+      templateUrl: 'views/directiva.html',
+      controller:'directivaCtrl'
+    })
 
   });

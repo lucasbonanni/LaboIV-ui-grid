@@ -1,0 +1,30 @@
+<div>
+  <h3>{{titulo}}</h3>
+  <!--div ui-grid="gridOptions" class="myGrid"
+    ui-grid-pagination
+    ui-grid-resize-columns
+  ></div-->
+
+  <utn-saludo></utn-saludo>
+  <div utn-saludo></div>
+  <div class="utn-saludo"></div>
+
+  <utn-saludo-dos></utn-saludo-dos>
+  <div utn-saludo-dos></div>
+  <div class="utn-saludo-dos"></div>
+
+  <!-- la directiva reemplaza todo el tag de comentario usando el atributo relplace en true -->
+  <!-- directive: utn-saludo-dos -->
+
+
+  <div class="utn-titulo"></div>
+
+  <div class="utn-titulo-url"></div>
+
+  <utn-titulo-parametro miparametro="Directiva con parametro"></div>
+
+  <directiva-bandera ng-repeat="bandera in listadoDeBanderas"banderaombre="{{bandera.Nombre}}" banderaimagen="{{bandera.BanderaChica}}"></directiva-bandera>
+
+  <directiva-bandera-obj ng-repeat="bandera in listadoDeBanderas" labanderaporparametro="bandera"></directiva-bandera-obj>
+
+</div>
